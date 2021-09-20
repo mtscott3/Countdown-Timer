@@ -3,64 +3,18 @@
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
         <title>DD End of Year Countdown</title>
-		<style>
-			h1 {
-  				text-align: center;
-				font-family: "audiowide", Arial, sans-serif !important;
-				color: white;
-  				font-size: 60px;
-			}
-			#body {
-				background: rgb(39, 37, 37) !important;
-			}
-			.countdowns {
-				background-color: rgb(65, 53, 87);
-				color: white;
-				font-family: "audiowide", Arial, sans-serif;
-			}
-			#months {
-				text-align: center;
-				font-size: 40px;
 
-			}
-			#weeks {
-				text-align: center;
-				font-size: 40px;
-			}
-			#days {
-				text-align: center;
-				font-size: 40px;
-
-			}
-			#hours{
-				text-align: center;
-				font-size: 25px;
-			}
-			#minutes{
-				text-align: center;
-				font-size: 25px;
-			}
-			#seconds{
-				text-align: center;
-				font-size: 25px;
-				margin-left: auto;
-				padding: 20px;
-			}
-			#divider{
-				color: rgb(65, 53, 87);
-			}
-
-		</style>
-		
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="JS\main.js"></script>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide&effect=neon">
 		<link rel="stylesheet" href="CSS\bootstrap.css">
+		<link rel="stylesheet" href="CSS\myStyle.css">
 
 	</head>
 
 	<body>
 		<h1 class="font-effect-neon"><a href="index.html">FIRST YEAR OF DEVELOPER DIRECTION: END OF YEAR COUNTDOWN</a></H1>
-		<img src="Images\Shadowy Super Coder.JPG" alt="shadowy super coder" width="1910" height="400">
+		<img src="Images\Shadowy Super Coder.JPG" alt="shadowy super coder" class="responsive" width="1910" height="400">
 		<div class="countdowns">
 			<p id="months"></p>
 			<p id="weeks"></p>
@@ -74,46 +28,5 @@
 
 	</body>
 
-	<script>
-		// date I joined developer direction
-		var JoinDate = new Date("Aug 1, 2022 19:36:00").getTime();
-
-		// Move the time every second
-		var x = setInterval(function() {
-
-			// Get the date and time of today
-			var today = new Date().getTime();
-				
-			// Find the difference between today and the date I joined DD
-			var difference = JoinDate - today;
-				
-			// Time calculations for months, weeks, days, hours, minutes, and seconds
-			var months = Math.floor(difference / ((1000 * 60 * 60 * 24)* 31));
-			var weeks = Math.floor(difference/((1000 * 60 * 60 * 24)*7));
-			var days = Math.floor(difference / (1000 * 60 * 60 * 24));
-			var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-			var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-			var seconds = Math.floor((difference % (1000 * 60)) / 1000);
-				
-			// Output the result in the paragraph elements above
-			document.getElementById("months").innerHTML = months + " : Months";
-			document.getElementById("weeks").innerHTML = weeks + " : Weeks";
-			document.getElementById("days").innerHTML = days + " : Days";
-			document.getElementById("hours").innerHTML = hours + " : Hours";
-			document.getElementById("minutes").innerHTML = minutes + " : Minutes"; 
-			document.getElementById("seconds").innerHTML = seconds + " : Seconds";
-				
-			// Display a message when time runs out 
-			if (distance < 0) {
-				clearInterval(x);
-				document.getElementById("months").innerHTML = "Year Ended";
-				document.getElementById("weeks").innerHTML = "Shadowy Super Coder";
-				document.getElementById("days").innerHTML = "Coding Skills Aquired";
-				document.getElementById("hours").innerHTML = "Developer Job On The Way";
-				document.getElementById("minutes").innerHTML = "$100,000";
-				document.getElementById("seconds").innerHTML = "Sovereign Individualism";
-			}
-		}, 1000);
-	</script>
 
 </html>
